@@ -11,10 +11,19 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Random rnd = new Random();
-            int number = rnd.Next(0, 100);
+            
             int count = 0;
             int guess = -1;
-            Console.WriteLine("I'm thinking of a number between 0 and 100");
+            int start = 0;
+            int stop = 0;
+            Console.WriteLine("input lower bound");
+            start = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("input upper bound");
+            stop = Convert.ToInt32(Console.ReadLine());
+
+            int number = rnd.Next(start, stop);
+
+            Console.WriteLine("I'm thinking of a number between " + start + " and " + stop);
             while (guess != number)
             {
                 guess = Convert.ToInt32(Console.ReadLine());
